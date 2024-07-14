@@ -21,9 +21,17 @@ class _SplashViewState extends State<SplashView> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: CircularProgressIndicator(),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(40),
+          child: Image.asset(
+            'assets/app_icon.png',
+            fit: BoxFit.cover,
+            width: 120,
+            height: 120,
+          ),
+        ),
       ),
     );
   }
