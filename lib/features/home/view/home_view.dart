@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_attendance_application/features/session/view/session_view.dart';
+import 'package:flutter_attendance_application/utils/navigation_util.dart';
 
 class HomeView extends StatefulWidget {
   static const String id = 'home_view';
@@ -42,23 +44,28 @@ class _HomeViewState extends State<HomeView> {
                   crossAxisSpacing: 8.0,
                   physics: const NeverScrollableScrollPhysics(),
                   crossAxisCount: 2,
-                  children: const [
-                    Card(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Icon(
-                            Icons.qr_code,
-                            size: 64.0,
-                          ),
-                          Text(
-                            'Scanner',
-                            style: TextStyle(fontSize: 32.0),
-                          )
-                        ],
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        NavigationUtil.pushNamed(context, SessionView.id);
+                      },
+                      child: const Card(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Icon(
+                              Icons.qr_code,
+                              size: 64.0,
+                            ),
+                            Text(
+                              'Scanner',
+                              style: TextStyle(fontSize: 32.0),
+                            )
+                          ],
+                        ),
                       ),
                     ),
-                    Card(
+                    const Card(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
