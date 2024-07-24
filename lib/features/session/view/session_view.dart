@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_attendance_application/features/session/view_model/session_view_model.dart';
+import 'package:provider/provider.dart';
 
 class SessionView extends StatefulWidget {
   static const String id = 'session_view';
@@ -10,8 +12,82 @@ class SessionView extends StatefulWidget {
 }
 
 class _SessionViewState extends State<SessionView> {
+  SessionViewModel vm = SessionViewModel();
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      appBar: AppBar(),
+      body: ChangeNotifierProvider<SessionViewModel>(
+        create: (context) => vm,
+        child: Consumer<SessionViewModel>(
+          builder: (context, vm, child) {
+            return Form(
+              child: Column(
+                children: [
+                  TextFormField(
+                    controller: vm.dateController,
+                    decoration: InputDecoration(
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          vm.displayDatePicker(context);
+                        },
+                        icon: Icon(Icons.date_range),
+                      ),
+                    ),
+                  ),
+                  TextFormField(),
+                  TextFormField(),
+                  TextFormField(),
+                  Row(
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: Text('Cancel'),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: Text('OK'),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            );
+          },
+          child: Form(
+            child: Column(
+              children: [
+                TextFormField(
+                  controller: vm.dateController,
+                  decoration: InputDecoration(
+                    suffixIcon: IconButton(
+                      onPressed: () {
+                        vm.displayDatePicker(context);
+                      },
+                      icon: Icon(Icons.date_range),
+                    ),
+                  ),
+                ),
+                TextFormField(),
+                TextFormField(),
+                TextFormField(),
+                Row(
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: Text('Cancel'),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: Text('OK'),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
