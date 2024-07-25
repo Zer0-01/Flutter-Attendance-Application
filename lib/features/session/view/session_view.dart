@@ -14,6 +14,13 @@ class SessionView extends StatefulWidget {
 class _SessionViewState extends State<SessionView> {
   SessionViewModel vm = SessionViewModel();
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    vm.init();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
