@@ -1,33 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+import 'package:flutter_attendance_application/features/scanner/view/scanner_view.dart';
+import 'package:flutter_attendance_application/utils/date_time_utils.dart';
 
 class SessionViewModel extends ChangeNotifier {
+  TextEditingController titleController = TextEditingController();
   TextEditingController dateController = TextEditingController();
-  DateTime? date;
-  DateFormat dateFormat = DateFormat("yyyy-MM-dd");
 
   void init() {
-    dateController.text = dateFormat.format(DateTime.now());
+    _setInitialDate();
+  }
 
+  void start(BuildContext context) {
+    _navigateToScannerView(context);
+  }
+
+  void cancel(BuildContext context) {
+    _dismiss(context);
+  }
+
+  //Private Function
+  void _setInitialDate() {
+    dateController.text = DateTimeUtils.formatDate(DateTime.now());
     notifyListeners();
   }
 
-  Future<void> displayDatePicker(BuildContext context) async {
-    DateTime selected = DateTime.now();
-    DateTime initial = DateTime(2000);
-    DateTime last = DateTime.now();
-    date = await showDatePicker(
-      context: context,
-      initialDate: selected,
-      firstDate: initial,
-      lastDate: last,
-    );
-
-    if (date != null) {
-      dateController.text = dateFormat.format(date!);
-    }
-    notifyListeners();
+  void _navigateToScannerView(BuildContext context) {
+    Navigator.pushNamed(context, ScannerView.id);
   }
 
-  Future<void> startSession() async {}
+  void _dismiss(BuildContext context) {
+    Navigator.pop(context);
+  }
 }

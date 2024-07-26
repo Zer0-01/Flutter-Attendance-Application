@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_attendance_application/features/home/view/home_view.dart';
+import 'package:flutter_attendance_application/features/scanner/view/scanner_view.dart';
 import 'package:flutter_attendance_application/features/session/view/session_view.dart';
 import 'package:flutter_attendance_application/features/splash/view/splash_view.dart';
 
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
         SplashView.id: (context) => const SplashView(),
         HomeView.id: (context) => const HomeView(),
         SessionView.id: (context) => const SessionView(),
+        ScannerView.id: (context) => const ScannerView(),
       },
       theme: ThemeData(
         // This is the theme of your application.
