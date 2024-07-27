@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_attendance_application/features/scanner/view_model/scanner_view_model.dart';
+import 'package:flutter_attendance_application/features/scanner/widget/scanner_elevated_button_widget.dart';
 import 'package:flutter_attendance_application/res/app_colors.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:provider/provider.dart';
@@ -47,9 +48,18 @@ class _ScannerViewState extends State<ScannerView> {
                       children: [
                         Text(
                           vm.barcode?.displayValue ?? "Scan Something",
-                          style: const TextStyle(color: AppColors.secondaryColor),
+                          style:
+                              const TextStyle(color: AppColors.secondaryColor),
                         ),
-                        ElevatedButton(onPressed: () {}, child: const Text('Save')),
+                        ScannerElevatedButtonWidget(
+                          label: 'Save',
+                          borderColor: AppColors.primaryColor,
+                          backgroundColor: AppColors.primaryColor,
+                          foregroundColor: AppColors.secondaryColor,
+                          onPressed: () {
+                            
+                          },
+                        )
                       ],
                     ),
                   ),
@@ -77,7 +87,8 @@ class _ScannerViewState extends State<ScannerView> {
                         vm.barcode?.displayValue ?? "Scan Something",
                         style: const TextStyle(color: AppColors.secondaryColor),
                       ),
-                      ElevatedButton(onPressed: () {}, child: const Text('Save')),
+                      ElevatedButton(
+                          onPressed: () {}, child: const Text('Save')),
                     ],
                   ),
                 ),
