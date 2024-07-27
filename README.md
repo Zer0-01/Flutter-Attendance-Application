@@ -1,16 +1,21 @@
-# flutter_attendance_application
+# Attendance Scanner
 
-A new Flutter project.
+## Overview
 
-## Getting Started
+**Attendance Scanner** is a mobile application developed using Flutter and Dart for the frontend. The application aims to provide a seamless attendance tracking system with barcode scanning capabilities.
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+- **User Authentication:** Login functionality.
+- **Recipe Management:** Scan barcodes for attendance tracking.
+- **Future Enhancements:** Additional features and improvements to enhance user experience.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Technology Stack
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Frontend:** Dart and Flutter
+- **State Management:** Provider
+- **Design Pattern:** MVVM (Model-View-ViewModel)
+
+## Status
+
+The project is currently in progress.
