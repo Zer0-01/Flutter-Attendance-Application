@@ -1,12 +1,11 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
 class ScannerViewModel extends ChangeNotifier {
-  final MobileScannerController qrController = MobileScannerController();
+  Barcode? barcode;
 
-  StreamSubscription<Object?>? subscription;
-
-  
+  void handleBarcode(BarcodeCapture barcodeCapture) {
+    barcode = barcodeCapture.barcodes.firstOrNull;
+    notifyListeners();
+  }
 }
