@@ -25,7 +25,6 @@ class _ScannerViewState extends State<ScannerView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: ChangeNotifierProvider<ScannerViewModel>(
         create: (context) => vm,
         child: Consumer<ScannerViewModel>(
@@ -41,7 +40,7 @@ class _ScannerViewState extends State<ScannerView> {
                   alignment: Alignment.bottomCenter,
                   child: Container(
                     alignment: Alignment.center,
-                    height: 100,
+                    height: 200,
                     color: Colors.black.withOpacity(0.4),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -51,14 +50,36 @@ class _ScannerViewState extends State<ScannerView> {
                           style:
                               const TextStyle(color: AppColors.secondaryColor),
                         ),
-                        ScannerElevatedButtonWidget(
-                          label: 'Save',
-                          borderColor: AppColors.primaryColor,
-                          backgroundColor: AppColors.primaryColor,
-                          foregroundColor: AppColors.secondaryColor,
-                          onPressed: () {
-                            
-                          },
+                        Padding(
+                          padding: const EdgeInsets.all(32.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Expanded(
+                                child: ScannerElevatedButtonWidget(
+                                  label: 'Cancel',
+                                  borderColor: AppColors.primaryColor,
+                                  backgroundColor: AppColors.secondaryColor,
+                                  foregroundColor: AppColors.primaryColor,
+                                  onPressed: () {
+                                    vm.cancel(context);
+                                  },
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 40,
+                              ),
+                              Expanded(
+                                child: ScannerElevatedButtonWidget(
+                                  label: 'Save',
+                                  borderColor: AppColors.primaryColor,
+                                  backgroundColor: AppColors.primaryColor,
+                                  foregroundColor: AppColors.secondaryColor,
+                                  onPressed: () {},
+                                ),
+                              ),
+                            ],
+                          ),
                         )
                       ],
                     ),
@@ -67,34 +88,6 @@ class _ScannerViewState extends State<ScannerView> {
               ],
             );
           },
-          child: Stack(
-            children: [
-              MobileScanner(
-                onDetect: (barcodes) {
-                  vm.handleBarcode(barcodes);
-                },
-              ),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Container(
-                  alignment: Alignment.center,
-                  height: 100,
-                  color: Colors.black.withOpacity(0.4),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text(
-                        vm.barcode?.displayValue ?? "Scan Something",
-                        style: const TextStyle(color: AppColors.secondaryColor),
-                      ),
-                      ElevatedButton(
-                          onPressed: () {}, child: const Text('Save')),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
         ),
       ),
     );
