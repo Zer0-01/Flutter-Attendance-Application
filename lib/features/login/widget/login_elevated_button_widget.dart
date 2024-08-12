@@ -7,6 +7,7 @@ class LoginElevatedButtonWidget extends StatelessWidget {
   final Color? foregroundColor;
   final Color borderColor;
   final EdgeInsetsGeometry? padding;
+  final Widget? child;
   const LoginElevatedButtonWidget(
       {super.key,
       this.onPressed,
@@ -14,7 +15,8 @@ class LoginElevatedButtonWidget extends StatelessWidget {
       this.backgroundColor,
       this.foregroundColor,
       required this.borderColor,
-      this.padding});
+      this.padding,
+      this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,7 @@ class LoginElevatedButtonWidget extends StatelessWidget {
         side: BorderSide(color: borderColor),
         textStyle: const TextStyle(fontWeight: FontWeight.bold),
       ),
-      child: Text(label),
+      child: child,
     );
   }
 }
