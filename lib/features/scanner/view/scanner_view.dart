@@ -24,6 +24,7 @@ class _ScannerViewState extends State<ScannerView> {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: ChangeNotifierProvider<ScannerViewModel>(
         create: (context) => vm,
@@ -40,7 +41,7 @@ class _ScannerViewState extends State<ScannerView> {
                   alignment: Alignment.bottomCenter,
                   child: Container(
                     alignment: Alignment.center,
-                    height: 200,
+                    height: height * 0.3,
                     color: Colors.black.withOpacity(0.4),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -71,11 +72,13 @@ class _ScannerViewState extends State<ScannerView> {
                               ),
                               Expanded(
                                 child: ScannerElevatedButtonWidget(
-                                  label: 'Save',
+                                  label: 'End',
                                   borderColor: AppColors.primaryColor,
                                   backgroundColor: AppColors.primaryColor,
                                   foregroundColor: AppColors.secondaryColor,
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    vm.end(context);
+                                  },
                                 ),
                               ),
                             ],
