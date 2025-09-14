@@ -1,0 +1,45 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Flutter-Attendance-Application",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "Flutter-Attendance-Application (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "Flutter-Attendance-Application (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "Flutter-Attendance-Application-dev",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main/main_dev.dart"
+        },
+        {
+            "name": "Flutter-Attendance-Application-dev (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile",
+            "program": "lib/main/main_dev.dart"
+        },
+        {
+            "name": "Flutter-Attendance-Application-dev (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release",
+            "program": "lib/main/main_dev.dart"
+        }
+    ]
+}
