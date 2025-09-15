@@ -36,9 +36,9 @@ class App extends StatelessWidget {
       );
 
   ThemeData _buildLightTheme() {
-    ColorScheme colorScheme = const ColorScheme(
+    ColorScheme colorScheme = ColorScheme(
         brightness: Brightness.light,
-        primary: Colors.blue,
+        primary: Colors.blue.shade600,
         onPrimary: Colors.white,
         secondary: Colors.pink,
         onSecondary: Colors.white,
@@ -46,7 +46,7 @@ class App extends StatelessWidget {
         onError: Colors.white,
         surface: Colors.white,
         onSurface: Colors.black,
-        outline: Colors.grey);
+        outline: Colors.grey.shade300);
 
     return ThemeData(useMaterial3: true, colorScheme: colorScheme);
   }
