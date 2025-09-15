@@ -3,5 +3,15 @@
     "helloWorld": "Hello World!",
     "@helloWorld": {
         "description": "The conventional newborn programmer greeting"
-    }
+    },
+    "email": "Emel",
+    "@email": {},
+    "enter_your_email_address": "Masukkan alamat emel anda",
+    "@enter_your_email_address": {},
+    "password": "Kata laluan",
+    "@password": {},
+    "enter_your_password": "Masukkan kata laluan anda",
+    "@enter_your_password": {},
+    "login": "Log Masuk",
+    "@login": {}
 }

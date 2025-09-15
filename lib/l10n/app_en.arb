@@ -3,5 +3,15 @@
     "helloWorld": "Hello World!",
     "@helloWorld": {
         "description": "The conventional newborn programmer greeting"
-    }
+    },
+    "email": "Email",
+    "@email": {},
+    "enter_your_email_address": "Enter your email address",
+    "@enter_your_email_address": {},
+    "password": "Password",
+    "@password": {},
+    "enter_your_password": "Enter your password",
+    "@enter_your_password": {},
+    "login": "Login",
+    "@login": {}
 }

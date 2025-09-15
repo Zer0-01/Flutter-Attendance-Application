@@ -10,4 +10,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get helloWorld => 'Hello World!';
+
+  @override
+  String get email => 'Email';
+
+  @override
+  String get enter_your_email_address => 'Enter your email address';
+
+  @override
+  String get password => 'Password';
+
+  @override
+  String get enter_your_password => 'Enter your password';
+
+  @override
+  String get login => 'Login';
 }
