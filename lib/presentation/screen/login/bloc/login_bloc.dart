@@ -15,5 +15,25 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   Future<void> _onPressedLoginEvent(
       OnPressedLoginEvent event, Emitter<LoginState> emit) async {
     _logger.debug("onPressedLoginEvent");
+    final String inputEmail = event.email;
+    final String inputPassword = event.password;
+
+    _logger.debug("email: $inputEmail, password: $inputPassword");
+
+    await _postLogin(emit, email: inputEmail, password: inputPassword);
+  }
+
+  Future<void> _postLogin(Emitter<LoginState> emit,
+      {required String email, required String password}) async {
+    _logger.debug("postLogin");
+
+    try {
+      emit(state.copyWith(postLoginStatus: PostLoginStatus.loading));
+      await Future.delayed(const Duration(seconds: 2));
+      emit(state.copyWith(postLoginStatus: PostLoginStatus.success));
+    } catch (e) {
+      _logger.error(e.toString());
+      emit(state.copyWith(postLoginStatus: PostLoginStatus.failure));
+    }
   }
 }
