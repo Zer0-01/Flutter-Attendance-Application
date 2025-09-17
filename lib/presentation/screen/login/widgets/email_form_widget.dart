@@ -3,7 +3,9 @@ import 'package:flutter_attendance_application/presentation/common_widgets/app_t
 import 'package:flutter_attendance_application/utils/extension.dart';
 
 class EmailFormWidget extends StatelessWidget {
-  const EmailFormWidget({super.key});
+  final TextEditingController emailController;
+
+  const EmailFormWidget({super.key, required this.emailController});
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +20,7 @@ class EmailFormWidget extends StatelessWidget {
                 ?.copyWith(fontWeight: FontWeight.bold),
           ),
           AppTextFormFieldWidget(
+            controller: emailController,
             hintText: context.l10n.enter_your_email_address,
           )
         ],

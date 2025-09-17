@@ -3,7 +3,9 @@ import 'package:flutter_attendance_application/presentation/common_widgets/app_t
 import 'package:flutter_attendance_application/utils/extension.dart';
 
 class PasswordFormWidget extends StatelessWidget {
-  const PasswordFormWidget({super.key});
+  final TextEditingController passwordController;
+
+  const PasswordFormWidget({super.key, required this.passwordController});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,9 @@ class PasswordFormWidget extends StatelessWidget {
             style: context.textTheme.titleMedium
                 ?.copyWith(fontWeight: FontWeight.bold),
           ),
-          AppTextFormFieldWidget(hintText: context.l10n.enter_your_password)
+          AppTextFormFieldWidget(
+              controller: passwordController,
+              hintText: context.l10n.enter_your_password)
         ],
       ),
     );

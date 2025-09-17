@@ -22,33 +22,62 @@ class App extends StatelessWidget {
     return AdaptiveTheme(
       light: _buildLightTheme(),
       dark: _buildDarkTheme(),
-      debugShowFloatingThemeButton: true,
-      initial: initialTheme,
+      initial: AdaptiveThemeMode.light,
       builder: (light, dark) =>
           _buildMultiBlocProvider(light, dark, language: language),
     );
   }
 
-  ThemeData _buildDarkTheme() => ThemeData(
-        useMaterial3: false,
-        brightness: Brightness.dark,
-        primarySwatch: Colors.blueGrey,
-      );
-
   ThemeData _buildLightTheme() {
-    ColorScheme colorScheme = ColorScheme(
-        brightness: Brightness.light,
-        primary: Colors.blue.shade600,
-        onPrimary: Colors.white,
-        secondary: Colors.pink,
-        onSecondary: Colors.white,
-        error: Colors.red,
-        onError: Colors.white,
-        surface: Colors.white,
-        onSurface: Colors.black,
-        outline: Colors.grey.shade300);
+    const colorScheme = ColorScheme(
+      brightness: Brightness.light,
+      primary: Color(0xFF3A4CA8), // Deep Indigo
+      onPrimary: Colors.white,
+      secondary: Color(0xFF2AB3A7), // Teal accent
+      onSecondary: Colors.white,
+      error: Color(0xFFE74C3C), // Muted red
+      onError: Colors.white,
+      surface: Color(0xFFFDFDFD), // Off-white for minimal feel
+      onSurface: Color(0xFF1C1C1C), // Almost black text
+      outline: Color(0xFFE0E0E0), // Subtle border/outline
+    );
 
-    return ThemeData(useMaterial3: true, colorScheme: colorScheme);
+    return ThemeData(
+      useMaterial3: true,
+      colorScheme: colorScheme,
+      scaffoldBackgroundColor: colorScheme.surface,
+      appBarTheme: AppBarTheme(
+        backgroundColor: colorScheme.surface,
+        foregroundColor: colorScheme.onSurface,
+        elevation: 0,
+      ),
+    );
+  }
+
+  ThemeData _buildDarkTheme() {
+    const colorScheme = ColorScheme(
+      brightness: Brightness.dark,
+      primary: Color(0xFF6B7BFF), // Soft indigo
+      onPrimary: Colors.white,
+      secondary: Color(0xFF4FD1C5), // Teal accent
+      onSecondary: Colors.black,
+      error: Color(0xFFEF5350),
+      onError: Colors.black,
+      surface: Color(0xFF121212), // Dark background
+      onSurface: Color(0xFFEDEDED), // Light text
+      outline: Color(0xFF2C2C2C), // Subtle border
+    );
+
+    return ThemeData(
+      useMaterial3: true,
+      colorScheme: colorScheme,
+      scaffoldBackgroundColor: colorScheme.surface,
+      appBarTheme: AppBarTheme(
+        backgroundColor: colorScheme.surface,
+        foregroundColor: colorScheme.onSurface,
+        elevation: 0,
+      ),
+    );
   }
 
   MultiBlocProvider _buildMultiBlocProvider(
