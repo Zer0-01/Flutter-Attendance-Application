@@ -50,7 +50,10 @@ class _LoginScreenState extends State<LoginScreen> {
             PasswordFormWidget(
               passwordController: _passwordController,
             ),
-            LoginButtonWidget(),
+            LoginButtonWidget(
+              emailController: _emailController,
+              passwordController: _passwordController,
+            ),
           ],
         ),
       ),
