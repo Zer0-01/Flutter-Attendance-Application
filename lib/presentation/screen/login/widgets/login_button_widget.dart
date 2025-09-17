@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_attendance_application/presentation/screen/login/bloc/login_bloc.dart';
+import 'package:flutter_attendance_application/routes/app_router.gr.dart';
 import 'package:flutter_attendance_application/utils/animation_constant.dart';
 import 'package:flutter_attendance_application/utils/extension.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -34,6 +36,7 @@ class LoginButtonWidget extends StatelessWidget {
 
         if (state.postLoginStatus == PostLoginStatus.success) {
           Navigator.pop(context);
+          context.router.replace(const ShellSetupRoute());
         }
       },
       child: Padding(
