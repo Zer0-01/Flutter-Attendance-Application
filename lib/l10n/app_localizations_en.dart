@@ -25,4 +25,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get login => 'Login';
+
+  @override
+  String get your_activity => 'Your Activity';
+
+  @override
+  String get view_all => 'View All';
+
+  @override
+  String get check_in => 'Check In';
+
+  @override
+  String get check_out => 'Check Out';
 }

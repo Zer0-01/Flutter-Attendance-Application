@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:equatable/equatable.dart';
 import 'package:flutter_attendance_application/configuration/app_logger.dart';
+import 'package:flutter_attendance_application/data/model/response/activity_list_dto_response.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'home_event.dart';
@@ -16,14 +17,15 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<OnTickHomeEvent>(_onTickHomeEvent);
   }
 
-  void _onInitHomeEvent(OnInitHomeEvent event, Emitter<HomeState> emit) {
-    // Cancel existing timer if any
+  Future<void> _onInitHomeEvent(
+      OnInitHomeEvent event, Emitter<HomeState> emit) async {
     _timer?.cancel();
 
-    // Start ticking every second
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       add(OnTickHomeEvent(dateTime: DateTime.now()));
     });
+
+    await _getActivityList(emit);
   }
 
   void _onTickHomeEvent(OnTickHomeEvent event, Emitter<HomeState> emit) {
@@ -35,6 +37,59 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         second: dt.second.toString().padLeft(2, '0'),
       ),
     );
+  }
+
+  Future<void> _getActivityList(Emitter<HomeState> emit) async {
+    _logger.debug("getActivityList");
+
+    try {
+      emit(
+          state.copyWith(getActivityListStatus: GetActivityListStatus.loading));
+
+      final ActivityListDtoResponse activityListDtoResponse =
+          ActivityListDtoResponse(
+        data: [
+          ActivityData(
+            type: "check in",
+            date: DateTime.now().subtract(const Duration(hours: 2)),
+            status: "ontime",
+          ),
+          ActivityData(
+            type: "check out",
+            date: DateTime.now().subtract(const Duration(hours: 1)),
+            status: "late",
+          ),
+          ActivityData(
+            type: "check in",
+            date: DateTime.now().subtract(const Duration(days: 1, hours: 3)),
+            status: "late",
+          ),
+          ActivityData(
+            type: "check out",
+            date: DateTime.now().subtract(const Duration(days: 1, hours: 2)),
+            status: "ontime",
+          ),
+          ActivityData(
+            type: "check in",
+            date: DateTime.now().subtract(const Duration(days: 2, hours: 2)),
+            status: "ontime",
+          ),
+        ],
+      );
+
+      final List<ActivityData> activityList = activityListDtoResponse.data;
+
+      emit(
+        state.copyWith(
+          getActivityListStatus: GetActivityListStatus.success,
+          activityList: activityList,
+        ),
+      );
+    } catch (e) {
+      _logger.error(e.toString());
+      emit(
+          state.copyWith(getActivityListStatus: GetActivityListStatus.failure));
+    }
   }
 
   @override

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_attendance_application/presentation/screen/home/bloc/home_bloc.dart';
+import 'package:flutter_attendance_application/presentation/screen/home/widgets/activity_list_widget.dart';
 import 'package:flutter_attendance_application/presentation/screen/home/widgets/clock_widget.dart';
 import 'package:flutter_attendance_application/presentation/screen/home/widgets/home_app_bar_widget.dart';
+import 'package:flutter_attendance_application/presentation/screen/home/widgets/your_activity_widget.dart';
+import 'package:flutter_attendance_application/utils/extension.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -20,11 +23,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: HomeAppBarWidget(),
-      body: Column(
-        children: [ClockWidget()],
-      ),
+    return Scaffold(
+      backgroundColor: context.colorScheme.surfaceDim,
+      appBar: const HomeAppBarWidget(),
+      body: const CustomScrollView(slivers: [
+        ClockWidget(),
+        YourActivityWidget(),
+        ActivityListWidget(),
+      ]),
     );
   }
 }

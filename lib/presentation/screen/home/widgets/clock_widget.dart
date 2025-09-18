@@ -10,67 +10,69 @@ class ClockWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeBloc, HomeState>(
       builder: (context, state) {
-        return Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: SizedBox(
-            width: double.infinity,
-            child: Card(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  spacing: 16,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      spacing: 8,
-                      children: [
-                        Container(
-                            padding: const EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                                color: context.colorScheme.secondary),
-                            child: Text(
-                              state.hour,
-                              style: context.textTheme.bodyLarge?.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                  color: context.colorScheme.onSecondary),
-                            )),
-                        const Text(":"),
-                        Container(
-                            padding: const EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                                color: context.colorScheme.secondary),
-                            child: Text(state.minute,
+        return SliverPadding(
+          padding: const EdgeInsets.all(16),
+          sliver: SliverToBoxAdapter(
+            child: SizedBox(
+              width: double.infinity,
+              child: Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    spacing: 16,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        spacing: 8,
+                        children: [
+                          Container(
+                              padding: const EdgeInsets.all(8),
+                              decoration: BoxDecoration(
+                                  color: context.colorScheme.secondary),
+                              child: Text(
+                                state.hour,
                                 style: context.textTheme.bodyLarge?.copyWith(
                                     fontWeight: FontWeight.bold,
-                                    color: context.colorScheme.onSecondary))),
-                        const Text(":"),
-                        Container(
-                            padding: const EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                                color: context.colorScheme.secondary),
-                            child: Text(state.second,
-                                style: context.textTheme.bodyLarge?.copyWith(
-                                    fontWeight: FontWeight.bold,
-                                    color: context.colorScheme.onSecondary))),
-                      ],
-                    ),
-                    const Row(
-                      spacing: 4,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(Icons.location_on_outlined),
-                        Text("SK Sultan Alam Shah ")
-                      ],
-                    ),
-                    FilledButton(
-                      onPressed: () {},
-                      style: FilledButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      )),
-                      child: const Text("Checkin"),
-                    ),
-                  ],
+                                    color: context.colorScheme.onSecondary),
+                              )),
+                          const Text(":"),
+                          Container(
+                              padding: const EdgeInsets.all(8),
+                              decoration: BoxDecoration(
+                                  color: context.colorScheme.secondary),
+                              child: Text(state.minute,
+                                  style: context.textTheme.bodyLarge?.copyWith(
+                                      fontWeight: FontWeight.bold,
+                                      color: context.colorScheme.onSecondary))),
+                          const Text(":"),
+                          Container(
+                              padding: const EdgeInsets.all(8),
+                              decoration: BoxDecoration(
+                                  color: context.colorScheme.secondary),
+                              child: Text(state.second,
+                                  style: context.textTheme.bodyLarge?.copyWith(
+                                      fontWeight: FontWeight.bold,
+                                      color: context.colorScheme.onSecondary))),
+                        ],
+                      ),
+                      const Row(
+                        spacing: 4,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.location_on_outlined),
+                          Text("SK Sultan Alam Shah ")
+                        ],
+                      ),
+                      FilledButton(
+                        onPressed: () {},
+                        style: FilledButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        )),
+                        child: const Text("Checkin"),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

@@ -130,6 +130,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Login'**
   String get login;
+
+  /// No description provided for @your_activity.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Activity'**
+  String get your_activity;
+
+  /// No description provided for @view_all.
+  ///
+  /// In en, this message translates to:
+  /// **'View All'**
+  String get view_all;
+
+  /// No description provided for @check_in.
+  ///
+  /// In en, this message translates to:
+  /// **'Check In'**
+  String get check_in;
+
+  /// No description provided for @check_out.
+  ///
+  /// In en, this message translates to:
+  /// **'Check Out'**
+  String get check_out;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

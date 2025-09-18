@@ -13,5 +13,13 @@
     "enter_your_password": "Enter your password",
     "@enter_your_password": {},
     "login": "Login",
-    "@login": {}
+    "@login": {},
+    "your_activity": "Your Activity",
+    "@your_activity": {},
+    "view_all": "View All",
+    "@view_all": {},
+    "check_in": "Check In",
+    "@check_in": {},
+    "check_out": "Check Out",
+    "@check_out": {}
 }

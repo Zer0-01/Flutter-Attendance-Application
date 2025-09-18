@@ -25,4 +25,16 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get login => 'Log Masuk';
+
+  @override
+  String get your_activity => 'Aktiviti Anda';
+
+  @override
+  String get view_all => 'Lihat Semua';
+
+  @override
+  String get check_in => 'Daftar Masuk';
+
+  @override
+  String get check_out => 'Daftar Keluar';
 }

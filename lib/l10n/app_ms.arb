@@ -13,5 +13,13 @@
     "enter_your_password": "Masukkan kata laluan anda",
     "@enter_your_password": {},
     "login": "Log Masuk",
-    "@login": {}
+    "@login": {},
+    "your_activity": "Aktiviti Anda",
+    "@your_activity": {},
+    "view_all": "Lihat Semua",
+    "@view_all": {},
+    "check_in": "Daftar Masuk",
+    "@check_in": {},
+    "check_out": "Daftar Keluar",
+    "@check_out": {}
 }
