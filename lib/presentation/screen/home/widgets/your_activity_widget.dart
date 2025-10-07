@@ -7,7 +7,7 @@ class YourActivityWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverPadding(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(8),
       sliver: SliverToBoxAdapter(
         child: Row(
           children: [

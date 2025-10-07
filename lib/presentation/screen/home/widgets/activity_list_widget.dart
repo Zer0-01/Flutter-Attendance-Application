@@ -14,7 +14,7 @@ class ActivityListWidget extends StatelessWidget {
     return BlocBuilder<HomeBloc, HomeState>(
       builder: (context, state) {
         return SliverPadding(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(8),
             sliver: SliverList.separated(
               itemCount: state.activityList.length,
               separatorBuilder: (context, index) => const SizedBox(

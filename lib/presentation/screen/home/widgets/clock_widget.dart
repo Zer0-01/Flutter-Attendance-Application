@@ -11,7 +11,7 @@ class ClockWidget extends StatelessWidget {
     return BlocBuilder<HomeBloc, HomeState>(
       builder: (context, state) {
         return SliverPadding(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(8),
           sliver: SliverToBoxAdapter(
             child: SizedBox(
               width: double.infinity,
