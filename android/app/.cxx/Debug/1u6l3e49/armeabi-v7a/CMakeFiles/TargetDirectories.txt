@@ -1,0 +1,2 @@
+/Users/izzatulkhairiah/Documents/Anas/Development/Flutter-Attendance-Application/android/app/.cxx/Debug/1u6l3e49/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/izzatulkhairiah/Documents/Anas/Development/Flutter-Attendance-Application/android/app/.cxx/Debug/1u6l3e49/armeabi-v7a/CMakeFiles/rebuild_cache.dir

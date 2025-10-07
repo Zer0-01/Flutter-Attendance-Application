@@ -1,0 +1,1 @@
+/Users/izzatulkhairiah/Documents/Anas/Development/Flutter-Attendance-Application/build/app/intermediates/cxx/Debug/583p1g1s/obj/arm64-v8a

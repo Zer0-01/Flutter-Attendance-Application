@@ -37,8 +37,6 @@ dependencies:
   cupertino_icons: ^1.0.6
   provider: ^6.1.2
   intl: any
-  mobile_scanner: ^5.1.1
-  simple_barcode_scanner: ^0.1.1
   audioplayers: ^6.0.0
   http: ^1.2.2
   logger: ^2.6.1
