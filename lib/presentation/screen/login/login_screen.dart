@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_attendance_application/gen/assets.gen.dart';
 import 'package:flutter_attendance_application/presentation/screen/login/widgets/email_form_widget.dart';
 import 'package:flutter_attendance_application/presentation/screen/login/widgets/login_button_widget.dart';
 import 'package:flutter_attendance_application/presentation/screen/login/widgets/password_form_widget.dart';
 import 'package:flutter_attendance_application/utils/extension.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -44,6 +46,13 @@ class _LoginScreenState extends State<LoginScreen> {
           spacing: 16,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Align(
+              alignment: Alignment.center,
+              child: SvgPicture.asset(
+                Assets.vectors.vectorStartingWork,
+                width: MediaQuery.sizeOf(context).width * 0.5,
+              ),
+            ),
             EmailFormWidget(
               emailController: _emailController,
             ),
