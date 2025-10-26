@@ -43,3 +43,11 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+### dotenv ###
+.env
+.env.*
+.env.g
+.env.g.*
+env_dev.g.dart
+

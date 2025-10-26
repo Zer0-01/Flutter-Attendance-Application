@@ -1,3 +1,5 @@
+import 'package:flutter_attendance_application/env/env_dev.dart';
+
 /// This file is used to set the environment
 enum Environment { dev, prod, test }
 
@@ -41,7 +43,7 @@ class ProfileConstants {
 class _Config {
   static const api = "API";
 
-  static Map<String, dynamic> devConstants = {api: "https://aerynox.com"};
+  static Map<String, dynamic> devConstants = {api: EnvDev.baseUrl};
 
   static Map<String, dynamic> testConstants = {api: "mock"};
 
