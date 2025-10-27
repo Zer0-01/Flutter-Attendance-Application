@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_attendance_application/configuration/app_logger.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,8 +30,14 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
     try {
       emit(state.copyWith(postLoginStatus: PostLoginStatus.loading));
-      await Future.delayed(const Duration(seconds: 2));
+
       emit(state.copyWith(postLoginStatus: PostLoginStatus.success));
+    } on DioException catch (e) {
+      _logger.error(e.toString());
+      _logger.error("diotype: ${e.type}");
+      _logger.error("diocode: ${e.response?.statusCode}");
+
+      emit(state.copyWith(postLoginStatus: PostLoginStatus.failure));
     } catch (e) {
       _logger.error(e.toString());
       emit(state.copyWith(postLoginStatus: PostLoginStatus.failure));
