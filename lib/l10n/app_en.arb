@@ -1,9 +1,5 @@
 {
     "@@locale": "en",
-    "helloWorld": "Hello World!",
-    "@helloWorld": {
-        "description": "The conventional newborn programmer greeting"
-    },
     "email": "Email",
     "@email": {},
     "enter_your_email_address": "Enter your email address",
@@ -21,5 +17,7 @@
     "check_in": "Check In",
     "@check_in": {},
     "check_out": "Check Out",
-    "@check_out": {}
+    "@check_out": {},
+    "john_doe_email": "john_doe@mail.com",
+    "@john_doe_email": {}
 }

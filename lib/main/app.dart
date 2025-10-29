@@ -29,18 +29,19 @@ class App extends StatelessWidget {
   }
 
   ThemeData _buildLightTheme() {
-    const colorScheme = ColorScheme(
+    final colorScheme = ColorScheme(
       brightness: Brightness.light,
-      primary: Color(0xFF3A4CA8), // Deep Indigo
+      primary: Colors.indigo,
       onPrimary: Colors.white,
-      secondary: Color(0xFF2AB3A7), // Teal accent
+      secondary: Colors.teal,
       onSecondary: Colors.white,
-      error: Color(0xFFE74C3C), // Muted red
+      error: Colors.red,
       onError: Colors.white,
-      surface: Color(0xFFFDFDFD), // Off-white for minimal feel
-      surfaceDim: Color.fromARGB(255, 246, 246, 246),
-      onSurface: Color(0xFF1C1C1C), // Almost black text
-      outline: Color(0xFFE0E0E0), // Subtle border/outline
+      surface: Colors.white,
+      surfaceDim: Colors.grey.shade200,
+      onSurface: Colors.black,
+      onSurfaceVariant: Colors.grey.shade600,
+      outline: Colors.grey.shade600,
     );
 
     return ThemeData(

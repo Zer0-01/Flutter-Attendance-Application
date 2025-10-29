@@ -9,9 +9,6 @@ class AppLocalizationsMs extends AppLocalizations {
   AppLocalizationsMs([String locale = 'ms']) : super(locale);
 
   @override
-  String get helloWorld => 'Hello World!';
-
-  @override
   String get email => 'Emel';
 
   @override
@@ -37,4 +34,7 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get check_out => 'Daftar Keluar';
+
+  @override
+  String get john_doe_email => 'john_doe@mail.com';
 }

@@ -9,9 +9,6 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get helloWorld => 'Hello World!';
-
-  @override
   String get email => 'Email';
 
   @override
@@ -37,4 +34,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get check_out => 'Check Out';
+
+  @override
+  String get john_doe_email => 'john_doe@mail.com';
 }

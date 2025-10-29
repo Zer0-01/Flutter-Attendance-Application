@@ -14,14 +14,10 @@ class EmailFormWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            context.l10n.email,
-            style: context.textTheme.titleMedium
-                ?.copyWith(fontWeight: FontWeight.bold),
-          ),
           AppTextFormFieldWidget(
             controller: emailController,
-            hintText: context.l10n.enter_your_email_address,
+            hintText: context.l10n.john_doe_email,
+            label: Text(context.l10n.email),
           )
         ],
       ),

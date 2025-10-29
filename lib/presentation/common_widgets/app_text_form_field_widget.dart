@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 class AppTextFormFieldWidget extends StatelessWidget {
   final String? hintText;
   final TextEditingController? controller;
+  final Widget? label;
 
-  const AppTextFormFieldWidget({super.key, this.hintText, this.controller});
+  const AppTextFormFieldWidget(
+      {super.key, this.hintText, this.controller, this.label});
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +17,7 @@ class AppTextFormFieldWidget extends StatelessWidget {
         hintText: hintText,
         border: _getBorder(),
         focusedBorder: _getFocusedBorder(),
+        label: label,
       ),
     );
   }

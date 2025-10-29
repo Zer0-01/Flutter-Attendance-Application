@@ -95,12 +95,6 @@ abstract class AppLocalizations {
     Locale('ms')
   ];
 
-  /// The conventional newborn programmer greeting
-  ///
-  /// In en, this message translates to:
-  /// **'Hello World!'**
-  String get helloWorld;
-
   /// No description provided for @email.
   ///
   /// In en, this message translates to:
@@ -154,6 +148,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Check Out'**
   String get check_out;
+
+  /// No description provided for @john_doe_email.
+  ///
+  /// In en, this message translates to:
+  /// **'john_doe@mail.com'**
+  String get john_doe_email;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

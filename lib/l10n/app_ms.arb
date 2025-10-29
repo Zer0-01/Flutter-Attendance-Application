@@ -1,25 +1,13 @@
 {
     "@@locale": "ms",
-    "helloWorld": "Hello World!",
-    "@helloWorld": {
-        "description": "The conventional newborn programmer greeting"
-    },
     "email": "Emel",
-    "@email": {},
     "enter_your_email_address": "Masukkan alamat emel anda",
-    "@enter_your_email_address": {},
     "password": "Kata laluan",
-    "@password": {},
     "enter_your_password": "Masukkan kata laluan anda",
-    "@enter_your_password": {},
     "login": "Log Masuk",
-    "@login": {},
     "your_activity": "Aktiviti Anda",
-    "@your_activity": {},
     "view_all": "Lihat Semua",
-    "@view_all": {},
     "check_in": "Daftar Masuk",
-    "@check_in": {},
     "check_out": "Daftar Keluar",
-    "@check_out": {}
+    "john_doe_email": "john_doe@mail.com"
 }

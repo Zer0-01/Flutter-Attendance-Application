@@ -14,14 +14,11 @@ class PasswordFormWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            context.l10n.password,
-            style: context.textTheme.titleMedium
-                ?.copyWith(fontWeight: FontWeight.bold),
-          ),
           AppTextFormFieldWidget(
-              controller: passwordController,
-              hintText: context.l10n.enter_your_password)
+            controller: passwordController,
+            hintText: context.l10n.enter_your_password,
+            label: Text(context.l10n.password),
+          )
         ],
       ),
     );
