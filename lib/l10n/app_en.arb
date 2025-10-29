@@ -19,5 +19,9 @@
     "check_out": "Check Out",
     "@check_out": {},
     "john_doe_email": "john_doe@mail.com",
-    "@john_doe_email": {}
+    "@john_doe_email": {},
+    "invalid_login": "Invalid login",
+    "@invalid_login": {},
+    "the_username_or_password_you_entered_is_incorrect": "The username or password you entered is incorrect. Please try again.",
+    "@the_username_or_password_you_entered_is_incorrect": {}
 }

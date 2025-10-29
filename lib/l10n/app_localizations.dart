@@ -154,6 +154,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'john_doe@mail.com'**
   String get john_doe_email;
+
+  /// No description provided for @invalid_login.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid login'**
+  String get invalid_login;
+
+  /// No description provided for @the_username_or_password_you_entered_is_incorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'The username or password you entered is incorrect. Please try again.'**
+  String get the_username_or_password_you_entered_is_incorrect;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

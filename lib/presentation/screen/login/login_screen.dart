@@ -43,14 +43,16 @@ class _LoginScreenState extends State<LoginScreen> {
       backgroundColor: context.colorScheme.surface,
       body: SafeArea(
         child: Column(
-          spacing: 16,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Align(
-              alignment: Alignment.center,
-              child: SvgPicture.asset(
-                Assets.vectors.vectorStartingWork,
-                width: MediaQuery.sizeOf(context).width * 0.5,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Align(
+                alignment: Alignment.center,
+                child: SvgPicture.asset(
+                  Assets.vectors.vectorStartingWork,
+                  width: MediaQuery.sizeOf(context).width * 0.5,
+                ),
               ),
             ),
             EmailFormWidget(

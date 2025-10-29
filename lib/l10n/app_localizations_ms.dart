@@ -37,4 +37,10 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get john_doe_email => 'john_doe@mail.com';
+
+  @override
+  String get invalid_login => 'Log Masuk Tidak Sah';
+
+  @override
+  String get the_username_or_password_you_entered_is_incorrect => 'Nama pengguna atau kata laluan yang dimasukkan tidak betul. Sila cuba lagi.';
 }

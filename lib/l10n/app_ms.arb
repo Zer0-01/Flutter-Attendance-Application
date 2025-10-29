@@ -9,5 +9,7 @@
     "view_all": "Lihat Semua",
     "check_in": "Daftar Masuk",
     "check_out": "Daftar Keluar",
-    "john_doe_email": "john_doe@mail.com"
+    "john_doe_email": "john_doe@mail.com",
+     "invalid_login": "Log Masuk Tidak Sah",
+    "the_username_or_password_you_entered_is_incorrect": "Nama pengguna atau kata laluan yang dimasukkan tidak betul. Sila cuba lagi."
 }

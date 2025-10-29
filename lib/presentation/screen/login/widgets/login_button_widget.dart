@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_attendance_application/presentation/screen/login/bloc/login_bloc.dart';
 import 'package:flutter_attendance_application/routes/app_router.gr.dart';
 import 'package:flutter_attendance_application/utils/animation_constant.dart';
+import 'package:flutter_attendance_application/utils/common_functions.dart';
 import 'package:flutter_attendance_application/utils/extension.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
+import 'package:toastification/toastification.dart';
 
 class LoginButtonWidget extends StatelessWidget {
   final TextEditingController emailController;
@@ -34,13 +36,25 @@ class LoginButtonWidget extends StatelessWidget {
           );
         }
 
+        if (state.postLoginStatus == PostLoginStatus.failure) {
+          Navigator.pop(context);
+
+          final String title = state.dioCodePostLogin == 400
+              ? context.l10n.invalid_login
+              : "Erorr";
+          final String message = state.dioCodePostLogin == 400
+              ? context.l10n.the_username_or_password_you_entered_is_incorrect
+              : "Erorr";
+          showErrorToast(context, title: title, message: message);
+        }
+
         if (state.postLoginStatus == PostLoginStatus.success) {
           Navigator.pop(context);
           context.router.replace(const ShellSetupRoute());
         }
       },
       child: Padding(
-        padding: const EdgeInsets.only(left: 16.0, bottom: 16, right: 16),
+        padding: const EdgeInsets.all(8),
         child: SizedBox(
             width: double.infinity,
             child: FilledButton(
